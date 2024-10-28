@@ -26,19 +26,4 @@ public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
-
-    @GetMapping("/verify")
-    public ResponseEntity<String> verify(String token) {
-        log.info("验证 token: {}", token);
-        if ("success".equals(token)) {
-            return ResponseEntity.status(HttpStatus.OK).build();
-        } else {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-        }
-    }
-
-    @GetMapping("/success")
-    public String success() {
-        return "test success by inshion";
-    }
 }
